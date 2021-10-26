@@ -12,7 +12,7 @@ public class MoneyThread extends Thread{
     public void run() {
         while (!isInterrupted()){
             try {
-                Thread.sleep(6000);
+                Thread.sleep(60000);
             } catch (InterruptedException e) {
                 break;
             }
