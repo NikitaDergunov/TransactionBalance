@@ -1,4 +1,7 @@
 # TransactionBalance
+
+Exercie in Thread technology
+
 To run clone either master(without to usd conversion functionality) or exchange_course(full functionality)
 In folder .../TransactionBalance run: mvn package; 
 To start the app run: java -jar target/balance-1.0-SNAPSHOT.jar
