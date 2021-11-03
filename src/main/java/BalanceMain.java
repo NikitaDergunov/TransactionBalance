@@ -1,13 +1,11 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class BalanceMain {
-    private static HashMap<String,Money> monies = new HashMap<String, Money>();
+     private static Map<String,Money> monies = new ConcurrentHashMap<>();
     public static void main(String[] args) {
         try(Scanner scanner = new Scanner(System.in)) {
             System.out.println("Use file? Leave empty if not:");

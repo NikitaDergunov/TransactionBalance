@@ -7,7 +7,7 @@ public class Helper {
         boolean ans3 = true;
         String[] array = transaction.split(" ");
         //1 space check
-        ans1 = array.length == 2;
+        ans1 = array.length >= 2;
         //Array index oob
         if(ans1){
             //currency name format check
@@ -25,5 +25,16 @@ public class Helper {
         String[] s = transaction.split(" ");
         BigDecimal ans = BigDecimal.valueOf(Double.parseDouble(s[1]));
         return ans;
+    }
+    public static boolean checkExchange(String transaction){
+        try{
+        String regex = "\\([A-Z][A-Z][A-Z]\\s([+-]?(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*))(?:[eE]([+-]?\\d+))?\\)";
+        return   transaction.substring(transaction.lastIndexOf(" ")-4).matches(regex);}
+        catch (Exception e){
+            return false;
+        }
+    }
+    public static BigDecimal getExchange(String transaction){
+        return BigDecimal.valueOf(Double.parseDouble(transaction.substring(transaction.lastIndexOf(" "),transaction.length()-1)));
     }
 }

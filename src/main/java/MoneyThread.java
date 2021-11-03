@@ -1,18 +1,19 @@
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
 public class MoneyThread extends Thread{
-    HashMap<String,Money>  monies;
-    public MoneyThread(HashMap<String,Money> monies){
+    Map<String,Money>  monies;
+    public MoneyThread(Map<String,Money> monies){
         this.monies=monies;
     }
     @Override
     public void run() {
         while (!isInterrupted()){
             try {
-                Thread.sleep(6000);
+                Thread.sleep(60000);
             } catch (InterruptedException e) {
                 break;
             }

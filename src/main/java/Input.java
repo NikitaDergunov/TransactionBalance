@@ -24,6 +24,7 @@ public class Input extends Thread{
                     if ((moneyCurrent = money.get(Helper.getName(line))) == null) {
                         //create new money object
                         moneyCurrent = new Money(Helper.getName(line), Helper.getAmount(line));
+                        if(Helper.checkExchange(line)) moneyCurrent.setExchange(Helper.getExchange(line));
                         //put money inside Map
                         money.put(moneyCurrent.getName(), moneyCurrent);
                         //create thread for that money
